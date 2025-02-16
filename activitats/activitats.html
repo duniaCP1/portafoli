@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activitats</title>
     <style>
+        
         @font-face {
-            font-family: 'italiana';
-            src: url('italiana.ttf') format('truetype'); 
+            font-family: 'digi';
+            src: url('/portafoli/portafoli/font/digi.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
+
+        @font-face {
+             font-family: 'calc'; 
+             src: url('portafoli/portafoli/font/calc.ttf') format('truetype');
+             font-weight: normal;
+             font-style: normal;
+}
+
         body {
-            background: #BEE1E6;
-            color: #345B63;
-            font-family: 'italiana';
+            color: white;
+            font-family: 'digi', sans-serif;
             font-size: 20px;
+            text-align: center;
+            background-image: url('portafoli/portafoli/imatges/2.jpg');
+            background-size: cover;
             margin: 0;
             padding: 0;
         }
@@ -23,40 +36,47 @@
             font-weight: bold;
         }
         a:hover {
-            color: silver;
+            color: black;
         }
 
         .separar {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-between;
+             gap: 20px;
+             padding: 30px;
+         }
+
+       .caja {
+             background-color: #ffffff;
+             padding: 10px;
+             border-radius: 10px;
+             width: 200px; 
+             height: 310px; 
+             box-shadow: 
+                 0 0 18px #00aaff, 
+                 0 0 10px #0088dd, 
+                 0 0 20px #0055aa;
+            font-family: 'calc', sans-serif;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: space-between;
-            gap: 20px;
-            padding: 30px;
-        }
-
-        .caja {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
-        }
-
-         .html {
-            background-color: #f1f8ff;
-        }
-
-        .css {
-            background-color: #f1f7e6;
-        }
+         }
 
         h1 {
-            font-size: 80px;
+            font-size: 100px;
 
         }
 
         h2 {
-            font-size: 60px;
+            font-size: 80px;
+            box-shadow: 0 0 10px #fff,
+                        0 0 20px #fff,
+                        0 0 30px #fff, 
+                        0 0 40px #fff, 
+                        0 0 50px #fff, 
+                        0 0 75px #fff;
+}
         }
 
         h3 {
@@ -292,3 +312,4 @@
     </div>
 </body>
 </html>
+
