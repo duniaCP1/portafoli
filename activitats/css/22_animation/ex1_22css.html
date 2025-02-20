@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitat 1_22</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #252850;
+        }
+
+        .sol {
+            width: 300px;
+            height: 300px;
+            background: yellow;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .luna {
+            width: 300px;
+            height: 300px;
+            background: gray;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: eclipse 4s infinite alternate;
+        }
+
+        @keyframes eclipse {
+            0% { left: -120px; }
+            50% { left: 0; }
+            100% { left: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sol">
+        <div class="luna"></div>
+    </div>
+</body>
+</html>

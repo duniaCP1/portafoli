@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitat 4_22</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+        }
+
+        .reloj {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background-image: url('reloj.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        .hora, .minuto, .segundo {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: 50% 100%;
+            transform: translateX(-50%) rotate(0deg);
+        }
+
+        .hora {
+            width: 8px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        .minuto {
+            width: 6px;
+            height: 80px;
+            background-color: #666;
+            border-radius: 3px;
+        }
+
+        .segundo {
+            width: 2px;
+            height: 90px;
+            background-color: red;
+            border-radius: 1px;
+        }
+
+        @keyframes rotarSegundos {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @keyframes rotarMinutos {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @keyframes rotarHoras {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        .segundo {
+            animation: rotarSegundos 60s linear infinite;
+        }
+
+        .minuto {
+            animation: rotarMinutos 3600s linear infinite;
+        }
+
+        .hora {
+            animation: rotarHoras 43200s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reloj">
+        <div class="hora"></div>
+        <div class="minuto"></div>
+        <div class="segundo"></div>
+    </div>
+
+</body>
+</html>
