@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitat 6_22</title>
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('horoscopo.jpg');
+            margin: 0;
+        }
+
+        .contenedor {
+            position: relative;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .barra {
+            width: 300px;
+            height: 10px;
+            background: #efb810;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            border-color: ;
+        }
+
+        .pendulo {
+            width: 3px;
+            height: 250px;
+            background: black;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform-origin: top center;
+            animation: movimiento-pendulo 2s ease-in-out infinite alternate;
+        }
+
+        .bola {
+            width: 50px;
+            height: 50px;
+            background: #efb810;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes movimiento-pendulo {
+            0% {
+                transform: rotate(-30deg);
+            }
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="barra"></div>
+        <div class="pendulo">
+            <div class="bola"></div>
+        </div>
+    </div>
+
+</body>
+</html>
