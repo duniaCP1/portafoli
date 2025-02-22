@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Activitat 1_23</title>
+    <style>
+    
+        body {
+            background-image: url('bosque.jpeg');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+           
+        }
+
+       
+        .contenedor {
+            perspective: 600px;
+            margin-top: 400px;
+        }
+
+       
+        .serpiente {
+            width: 500px;
+            height: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        
+        .serpiente:hover {
+            transform: rotateY(20deg) rotateX(15deg) translateZ(50px);
+        
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="serp.png" alt="Serpiente 3D" class="serpiente">
+    </div>
+</body>
+</html>
