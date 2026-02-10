@@ -2,113 +2,102 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El meu portafoli</title>
+    <title>Portafoli · Dunia Cañas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         @font-face {
             font-family: 'digi';
             src: url('/portafoli/portafoli/fonts/digi.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
         }
 
         body {
-            color: white;
             font-family: 'digi', sans-serif;
-            font-size: 20px;
-            text-align: center;
             background-image: url('/portafoli/portafoli/imatges/1.jpg');
             background-size: cover;
-            margin: 0;
-            padding: 0;
-        }
-
-        .imagen2 {
-            position: absolute;
-            top: 200px;
-            border-radius: 30px;
-            left: 50%;
-            margin-left: -100px;
-            display: flex;
-            justify-content: center;
-            width: 220px;
-            height: auto;
-            z-index: 1;
-            box-shadow: 
-                 0 0 18px #00aaff, 
-                 0 0 10px #0088dd, 
-                 0 0 20px #0055aa;
-}
-
-        .casillas {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 30px;
-            margin-top: 10px;
-            position: fixed;
-            top: 20%;
-            right: 0;
-            padding-right: 60px;
-        }
-
-        .casilla {
-            background-color: #555;
-            padding: 20px 30px;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 20px;
-            transition: background-color 0.3s;
-            flex-grow: 1; 
-            width: 100px; 
-            height: 30px;
-            box-shadow: 
-                 0 0 18px #00aaff, 
-                 0 0 10px #0088dd, 
-                 0 0 20px #0055aa;
-        }
-
-        .casilla a {
+            background-position: center;
             color: white;
-            text-decoration: none;
-            font-weight: bold;
+            min-height: 100vh;
         }
 
-        .casilla:hover {
-            background-color: #888;
-            transform: scale(1.5);
+        /* Overlay para mejorar legibilidad */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
         }
 
         h1 {
-            font-size: 5rem;
+            font-size: clamp(3rem, 6vw, 5rem);
             color: #3498db;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-            text-shadow: 
-                1px 1px 2px rgba(0, 0, 0, 0.3), 
-                2px 2px 4px rgba(0, 0, 0, 0.3),
-                3px 3px 6px rgba(0, 0, 0, 0.3),
-                4px 4px 8px rgba(0, 0, 0, 0.3),
-                5px 5px 10px rgba(0, 0, 0, 0.3),
+            text-shadow: 0 0 15px #00aaff;
+        }
 
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #00aaff !important;
+        }
+
+        .btn-portfolio {
+            border: 2px solid #00aaff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px #00aaff;
+        }
+
+        .btn-portfolio:hover {
+            background-color: #00aaff;
+            color: black;
+            transform: scale(1.05);
         }
     </style>
 </head>
+
 <body>
+<div class="overlay">
 
-    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Dunia</a>
 
-    <div class="casillas">
-        <div class="casilla"><a href="/portafoli/activitats/activitats.html">Activitats</a></div>
-        <div class="casilla"><a href="/portafoli/portafoli/font/sobre.html">Sobre Mi</a></div>
-        <div class="casilla"><a href="/portafoli/portafoli/font/contacte.html">Contacte</a></div>
-        <div class="casilla"><a href="blog.html">Currículum</a></div>
-        <div class="casilla"><a href="projecte.html">Projectes</a></div>
-    </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <h1>Dunia Cañas</h1>
-    
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/activitats/activitats.html">Activitats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/portafoli/font/sobre.html">Sobre mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/portafoli/font/contacte.html">Contacte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Currículum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projecte.html">Projectes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="container d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 80vh;">
+        <h1 class="mb-4">Dunia Cañas</h1>
+        <p class="fs-4 mb-4">Desenvolupadora · Estudiant FP Superior</p>
+
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="projecte.html" class="btn-portfolio">Veure projectes</a>
+            <a href="blog.html" class="btn-portfolio">Currículum</a>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
