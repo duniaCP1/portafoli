@@ -14,48 +14,53 @@
             src: url('fonts/digi.ttf') format('truetype');
         }
 
+        /* BASE */
         body {
             font-family: 'digi', sans-serif;
             background-color: #0B2B40;
             color: white;
             min-height: 100vh;
             margin: 0;
+            position: relative;
+            overflow-x: hidden;
         }
 
+        /* FONDO ANIMADO */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(0, 170, 255, 0.12), transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(52, 152, 219, 0.10), transparent 45%);
+            animation: moveBackground 30s linear infinite;
+            z-index: -2;
+        }
+
+        body::after {
+            animation-duration: 60s;
+            opacity: 0.6;
+        }
+
+        @keyframes moveBackground {
+            0%   { transform: translate(0, 0); }
+            50%  { transform: translate(-25%, -20%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* OVERLAY */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.55);
             min-height: 100vh;
+            position: relative;
+            z-index: 1;
         }
 
-        /* AVATAR */
-        .avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 3px solid #00aaff;
-            box-shadow: 0 0 20px rgba(0, 170, 255, 0.6);
-            background-color: rgba(255, 255, 255, 0.08);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            color: #3498db;
-            text-shadow: 0 0 15px #00aaff;
-        }
-
+        /* NAVBAR */
         .nav-link {
             color: white !important;
             font-size: 1.1rem;
@@ -65,6 +70,37 @@
             color: #00aaff !important;
         }
 
+        /* AVATAR */
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #00aaff;
+            box-shadow: 0 0 25px rgba(0, 170, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.08);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* TITULO */
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: #3498db;
+            text-shadow: 0 0 15px #00aaff;
+        }
+
+        /* BOTONES */
         .btn-portfolio {
             border: 2px solid #00aaff;
             color: white;
@@ -108,14 +144,14 @@
 
         <!-- AVATAR -->
         <div class="avatar">
-            <!-- Cuando tengas tu foto, descomenta la línea -->
+            <!-- cuando tengas la foto -->
             <!-- <img src="imatges/foto.jpg" alt="Foto de Dunia Cañas"> -->
         </div>
 
         <h1>Dunia Cañas</h1>
-        <p class="fs-4">Desenvolupadora Web Full Stack</p>
+        <p class="fs-4 mb-4">Desenvolupadora Web Full Stack</p>
 
-        <div class="d-flex gap-3 mt-3 flex-wrap justify-content-center">
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
             <a href="font/curriculum.html" class="btn-portfolio">Currículum</a>
             <a href="font/projectes.html" class="btn-portfolio">Projectes</a>
         </div>
