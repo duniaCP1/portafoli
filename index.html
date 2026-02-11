@@ -5,6 +5,7 @@
     <title>Portafoli · Dunia Cañas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -16,8 +17,6 @@
         body {
             font-family: 'digi', sans-serif;
             background-color: #0B2B40;
-            background-size: cover;
-            background-position: center;
             color: white;
             min-height: 100vh;
             margin: 0;
@@ -26,6 +25,29 @@
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
             min-height: 100vh;
+        }
+
+        /* AVATAR */
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #00aaff;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.08);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -63,9 +85,10 @@
 <body>
 <div class="overlay">
 
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -80,11 +103,19 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="container d-flex flex-column justify-content-center align-items-center text-center" style="min-height:80vh">
+
+        <!-- AVATAR -->
+        <div class="avatar">
+            <!-- Cuando tengas tu foto, descomenta la línea -->
+            <!-- <img src="imatges/foto.jpg" alt="Foto de Dunia Cañas"> -->
+        </div>
+
         <h1>Dunia Cañas</h1>
         <p class="fs-4">Desenvolupadora Web Full Stack</p>
 
-        <div class="d-flex gap-3">
+        <div class="d-flex gap-3 mt-3 flex-wrap justify-content-center">
             <a href="font/curriculum.html" class="btn-portfolio">Currículum</a>
             <a href="font/projectes.html" class="btn-portfolio">Projectes</a>
         </div>
