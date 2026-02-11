@@ -19,56 +19,20 @@
             color: white;
             min-height: 100vh;
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
-        .bg-animated {
+        canvas {
             position: fixed;
             inset: 0;
-            z-index: -3;
-            background:
-                linear-gradient(120deg,
-                    #0B2B40,
-                    #0f3d5c,
-                    #0B2B40
-                );
-            background-size: 600% 600%;
-            animation: gradientFlow 18s ease-in-out infinite;
-        }
-
-        .bg-waves {
-            position: fixed;
-            inset: -50%;
             z-index: -2;
-            background:
-                repeating-radial-gradient(
-                    circle at 30% 40%,
-                    rgba(0,170,255,0.35) 0px,
-                    rgba(0,170,255,0.35) 2px,
-                    transparent 80px,
-                    transparent 160px
-                );
-            animation: waveMove 30s linear infinite;
-            opacity: 0.35;
-        }
-
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes waveMove {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-10%, -10%) rotate(180deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
         }
 
         .overlay {
             position: relative;
             z-index: 1;
             min-height: 100vh;
-            background: rgba(0,0,0,0.55);
+            background: rgba(0,0,0,0.45);
         }
 
         .nav-link {
@@ -87,10 +51,7 @@
             border: 3px solid #00aaff;
             box-shadow: 0 0 30px rgba(0,170,255,0.8);
             background-color: rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         h1 {
@@ -117,8 +78,8 @@
 </head>
 
 <body>
-<div class="bg-animated"></div>
-<div class="bg-waves"></div>
+
+<canvas id="network"></canvas>
 
 <div class="overlay">
 
@@ -149,6 +110,87 @@
     </section>
 
 </div>
+
+<script>
+const canvas = document.getElementById("network")
+const ctx = canvas.getContext("2d")
+
+let w, h
+function resize() {
+    w = canvas.width = window.innerWidth
+    h = canvas.height = window.innerHeight
+}
+window.addEventListener("resize", resize)
+resize()
+
+const mouse = { x: null, y: null }
+window.addEventListener("mousemove", e => {
+    mouse.x = e.clientX
+    mouse.y = e.clientY
+})
+
+const nodes = []
+const nodeCount = 90
+const maxDist = 130
+
+for (let i = 0; i < nodeCount; i++) {
+    nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4
+    })
+}
+
+function draw() {
+    ctx.clearRect(0, 0, w, h)
+
+    for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]
+        n.x += n.vx
+        n.y += n.vy
+
+        if (n.x < 0 || n.x > w) n.vx *= -1
+        if (n.y < 0 || n.y > h) n.vy *= -1
+
+        for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j]
+            const dx = n.x - m.x
+            const dy = n.y - m.y
+            const dist = Math.sqrt(dx * dx + dy * dy)
+
+            if (dist < maxDist) {
+                ctx.strokeStyle = `rgba(0,170,255,${1 - dist / maxDist})`
+                ctx.lineWidth = 1
+                ctx.beginPath()
+                ctx.moveTo(n.x, n.y)
+                ctx.lineTo(m.x, m.y)
+                ctx.stroke()
+            }
+        }
+
+        if (mouse.x && mouse.y) {
+            const dx = n.x - mouse.x
+            const dy = n.y - mouse.y
+            const dist = Math.sqrt(dx * dx + dy * dy)
+
+            if (dist < 150) {
+                n.x += dx * 0.01
+                n.y += dy * 0.01
+            }
+        }
+
+        ctx.fillStyle = "#00aaff"
+        ctx.beginPath()
+        ctx.arc(n.x, n.y, 2, 0, Math.PI * 2)
+        ctx.fill()
+    }
+
+    requestAnimationFrame(draw)
+}
+
+draw()
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
