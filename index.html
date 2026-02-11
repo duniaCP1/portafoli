@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Portafoli · Dunia Cañas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Portafoli · Dunia Cañas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        @font-face {
-            font-family: 'digi';
-            src: url('fonts/digi.ttf') format('truetype');
-        }
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
 
-        body {
-            font-family: 'digi', sans-serif;
-            background-image: url('imatges/1.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            min-height: 100vh;
-            margin: 0;
-        }
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            min-height: 100vh;
-        }
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+    }
 
-        h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            color: #3498db;
-            text-shadow: 0 0 15px #00aaff;
-        }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
 
-        .nav-link {
-            color: white !important;
-            font-size: 1.1rem;
-        }
+    .btn-main {
+      background-color: #0d6efd;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
 
-        .nav-link:hover {
-            color: #00aaff !important;
-        }
+    .btn-outline {
+      border: 2px solid #0d6efd;
+      color: #0d6efd;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
 
-        .btn-portfolio {
-            border: 2px solid #00aaff;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px #00aaff;
-        }
-
-        .btn-portfolio:hover {
-            background-color: #00aaff;
-            color: black;
-            transform: scale(1.05);
-        }
-    </style>
+    footer {
+      border-top: 1px solid #dee2e6;
+    }
+  </style>
 </head>
 
 <body>
-<div class="overlay">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Inici</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Dunia Cañas</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto gap-3">
-                    <li class="nav-item"><a class="nav-link" href="activitats/activitats.html">Activitats</a></li>
-                    <li class="nav-item"><a class="nav-link" href="font/sobre.html">Sobre mi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="font/contacte.html">Contacte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="font/curriculum.html">Currículum</a></li>
-                </ul>
-            </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link" href="font/sobre.html">Sobre mi</a></li>
+        <li class="nav-item"><a class="nav-link" href="font/curriculum.html">Currículum</a></li>
+        <li class="nav-item"><a class="nav-link" href="font/projecte.html">Projectes</a></li>
+        <li class="nav-item"><a class="nav-link" href="font/contacte.html">Contacte</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="hero-title">Hola, sóc Dunia Cañas</h1>
+        <p class="hero-subtitle mt-3">
+          Estudiant de Desenvolupament d’Aplicacions Web · FP Superior
+        </p>
+
+        <p class="mt-4">
+          M’interessa el desenvolupament web, la programació i la creació
+          d’aplicacions funcionals i accessibles.
+        </p>
+
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="font/curriculum.html" class="btn-main">Veure currículum</a>
+          <a href="font/projecte.html" class="btn-outline">Veure projectes</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="container d-flex flex-column justify-content-center align-items-center text-center" style="min-height:80vh">
-        <h1>Dunia Cañas</h1>
-        <p class="fs-4">Desenvolupadora Web Full Stack</p>
-
-        <div class="d-flex gap-3">
-            <a href="font/curriculum.html" class="btn-portfolio">Currículum</a>
-            <a href="font/sobre.html" class="btn-portfolio">Sobre mi</a>
-        </div>
-    </section>
-
-</div>
+<!-- FOOTER -->
+<footer class="py-4 bg-white">
+  <div class="container text-center text-muted">
+    © 2026 · Dunia Cañas · Portafoli personal
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
