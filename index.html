@@ -5,25 +5,25 @@
     <title>Portafoli · Dunia Cañas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         @font-face {
             font-family: 'digi';
-            src: url('fonts/digi.ttf') format('truetype');
+            src: url('/portafoli/portafoli/fonts/digi.ttf') format('truetype');
         }
 
         body {
             font-family: 'digi', sans-serif;
-            font-size: 20px;
-            color: white;
-            background-image: url('imatges/1.jpg');
+            background-image: url('/portafoli/portafoli/imatges/1.jpg');
             background-size: cover;
             background-position: center;
-            margin: 0;
+            color: white;
             min-height: 100vh;
         }
 
+        /* Overlay para mejorar legibilidad */
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
             min-height: 100vh;
@@ -32,38 +32,31 @@
         h1 {
             font-size: clamp(3rem, 6vw, 5rem);
             color: #3498db;
-            text-shadow:
-                0 0 10px #00aaff,
-                0 0 20px #0088dd;
+            text-shadow: 0 0 15px #00aaff;
         }
 
-        .menu-lateral {
-            position: fixed;
-            top: 25%;
-            right: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
         }
 
-        .menu-item {
-            background-color: rgba(85, 85, 85, 0.8);
-            padding: 15px 25px;
-            border-radius: 6px;
-            text-align: center;
-            box-shadow: 0 0 15px #00aaff;
-            transition: transform 0.3s, background-color 0.3s;
+        .nav-link:hover {
+            color: #00aaff !important;
         }
 
-        .menu-item a {
+        .btn-portfolio {
+            border: 2px solid #00aaff;
             color: white;
+            padding: 12px 25px;
             text-decoration: none;
-            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px #00aaff;
         }
 
-        .menu-item:hover {
-            background-color: #777;
-            transform: scale(1.2);
+        .btn-portfolio:hover {
+            background-color: #00aaff;
+            color: black;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -71,18 +64,40 @@
 <body>
 <div class="overlay">
 
-    <div class="menu-lateral">
-        <div class="menu-item"><a href="activitats/activitats.html">Activitats</a></div>
-        <div class="menu-item"><a href="font/sobre.html">Sobre mi</a></div>
-        <div class="menu-item"><a href="font/contacte.html">Contacte</a></div>
-        <div class="menu-item"><a href="font/curriculum.html">Currículum</a></div>
-        <div class="menu-item"><a href="font/projecte.html">Projectes</a></div>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Dunia</a>
 
-    <div class="container d-flex justify-content-center align-items-center text-center" style="min-height:100vh;">
-        <h1>Dunia Cañas</h1>
-    </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/activitats/activitats.html">Activitats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/portafoli/font/sobre.html">Sobre mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/portafoli/portafoli/font/contacte.html">Contacte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Currículum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projecte.html">Projectes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="container d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 80vh;">
+        <h1 class="mb-4">Dunia Cañas</h1>
+        <p class="fs-4 mb-4">Desenvolupadora · Estudiant FP Superior</p>
+
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="projecte.html" class="btn-portfolio">Veure projectes</a>
+            <a href="blog.html" class="btn-portfolio">Currículum</a>
+        </div>
+    </section>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
